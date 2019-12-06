@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "ad806ec8-d333-4252-9651-49e4f1a1e047",
+		"name": "Config MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Config",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"state\" : \"SP\",\n\t\"city\" : \"Limeira\",\n\t\"name\" : \"Iguatemi Shopping\",\n\t\"period\": 1,\n\t\"active\": true,\n\t\"machineIp\": \"192.168.0.1\",\n\t\"healthUrl\": \"localhost:8088/health\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8443/config",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"config"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Config",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"state\" : \"SP\",\n\t\"city\" : \"Campinas\",\n\t\"name\" : \"Iguatemi Shopping\",\n\t\"period\": 1,\n\t\"active\": true,\n\t\"machineIp\": \"192.168.0.1\",\n\t\"healthUrl\": \"localhost:8088/health\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8443/config/5de94d429f4c942ffd287bce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"config",
+						"5de94d429f4c942ffd287bce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Config",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8443/config/5de94d429f4c942ffd287bce",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"config",
+						"5de94d429f4c942ffd287bce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Config",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/config/5de94d769f4c942ffd287bcf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"config",
+						"5de94d769f4c942ffd287bcf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Config",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/config?page=0?size=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"config"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0?size=2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Config with Pageable",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/config?page=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"config"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

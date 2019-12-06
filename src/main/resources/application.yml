@@ -1,0 +1,30 @@
+server:
+  port: 8443
+
+spring:
+  data:
+    mongodb:
+      authentication-database: admin
+      username: admin
+      password: admin
+      database: local
+      port: 27017
+      host: localhost
+
+management:
+  server:
+     port: 9443
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+  endpoints:
+    web:
+      base-path: /cliente/actuator
+      exposure:
+        include: '*'
